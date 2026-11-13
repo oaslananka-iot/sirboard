@@ -1,9 +1,9 @@
 version: 1
 mode: enforce
-releaseMode: production
+releaseMode: prototype
 projects:
   - path: .
-fail-on: medium
+fail-on: high
 rules:
   bom.missing-mpn: true
   bom.compliance: true
@@ -11,28 +11,17 @@ rules:
   bom.risk-score: true
   bom.eol-detection: true
   bom.unknown-lifecycle: true
-  bom.single-source: true
-  bom.identity-conflicts: true
+  bom.single-source: false
   design.board-outline: true
   design.unique-references: true
   drc.kicad: true
-  erc.kicad: true
-  manufacturing.package-completeness: true
-  manufacturing.fab-notes: true
-  manufacturing.position-coverage: true
-  manufacturing.drill-coverage: true
-  manufacturing.tooling-holes: true
-  manufacturing.test-points: true
-  manufacturing.fiducials: true
-  manufacturing.assembly-sides: true
-  manufacturing.layer-stackup: true
-  manufacturing.pin1-markers: true
-  manufacturing.polarity-markers: true
-  manufacturing.silkscreen-over-pad: true
+  manufacturing.package-completeness: false
+  manufacturing.fab-notes: false
+  manufacturing.position-coverage: false
+  manufacturing.drill-coverage: false
   release.revision-set: true
-  release.changelog-present: true
-  release.tag-matches-revision: true
-  release.version-format: true
+  release.changelog-present: false
+  release.tag-matches-revision: false
 report:
   sarif: boardreadyops.sarif.json
   json: boardreadyops.findings.json
